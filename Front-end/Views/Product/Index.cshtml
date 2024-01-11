@@ -1,0 +1,125 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/Database-layoutt.cshtml";
+}
+
+<!-- Content Wrapper -->
+<div id="content-wrapper" class="d-flex flex-column">
+
+    <!-- Main Content -->
+    <div id="content">
+
+        <!-- Topbar -->
+        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+            <!-- Topbar Navbar -->
+            <ul class="navbar-nav ml-auto">
+                
+            </ul>
+
+        </nav>
+        <!-- End of Topbar -->
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+                <!--button add-->
+                <div class="card-header py-3">
+                    <button type="button" class="btn btn-success" onclick="add()" data-toggle="modal" data-tooltip="tooltip" data-placement="bottom" title="Add New Product" data-target="#exampleAdd">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleAdd" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Add New Product</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="mb-1s">
+                                <label for="productId" hidden="hidden">Product Id</label>
+                                    <input type="hidden" class="form-control" id="productId" placeholder="productId">
+                                </div>
+                                <div class="mb-3">
+                                <label for="name" class="form-label">Product Name</label>
+                                <input type="text" class="form-control" id="name" placeholder="name">
+                                </div>
+                                <div class="mb-3">
+                                <label for="description" class="form-label">Description</label>
+                                <textarea class="form-control" id="description" rows="3"></textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="price" class="form-label">Price</label>
+                                    <input type="number" class="form-control" id="price" placeholder="price">
+                                </div>
+                                <div class="mb-3">
+                                <div>
+                                    <label for="category" class="form-label">Category Product</label>
+                                </div>
+                                <select class="form-control" aria-label="Category Product" name="categoryId" id="categoryId">
+                                    <option selected value="">Choose category</option>
+                                </select>
+                                </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" id="save" data-dismiss="modal" onclick="save()">Save Changes</button>
+                                <button type="button" class="btn btn-warning" id="update" data-dismis="modal" onclick="Update()">Edit</button>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            <!-- DataTales Example -->
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Data Product</h6>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="tb_product" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Product Name</th>
+                                    <th>Description</th>
+                                    <th>Price</th>
+                                    <th>Product Category</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                              
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /.container-fluid -->
+<!-- End of Content Wrapper -->
+@section Scripts {
+    <!-- Bootstrap core JavaScript-->
+    <script src="~/startbootstrap-sb-admin-2/vendor/jquery/jquery.min.js"></script>
+    <script src="~/startbootstrap-sb-admin-2/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="~/startbootstrap-sb-admin-2/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="~/startbootstrap-sb-admin-2/js/sb-admin-2.min.js"></script>
+    <!-- Page level plugins -->
+    <script src="~/startbootstrap-sb-admin-2/vendor/datatables/jquery.datatables.min.js"></script>
+    <script src="~/startbootstrap-sb-admin-2/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="~/startbootstrap-sb-admin-2/js/demo/datatables-demo.js"></script>
+
+    <!-- Page specific script -->
+    <script src="~/js/productScript.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+}
